@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Location | Safenix</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📍</text></svg>"/>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">🛡️ Safe<span class="logo-accent">nix</span><span class="logo-sub">Rapid Crisis Response</span></a>
+    <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safety.html" class="nav-women">🚺 Women Safety</a></li>
+      <li><a href="contacts.html">Contacts</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="help.html">Helplines</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="ai-assistant.html" class="nav-ai">🤖 AI Assistant</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="dark-btn" id="dark-btn">🌙 Dark</button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="badge badge-sea mb-2">📍 Live Location</span>
+  <h1>Your <span class="ac-sea">Current Location</span></h1>
+  <p>Fetch GPS coordinates and share your exact position via Google Maps link.</p>
+</div>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="grid-2">
+
+      <!-- Coordinates Card -->
+      <div class="card c-royal tc">
+        <div class="loc-pulse">📡</div>
+        <h2 style="font-size:1.1rem;margin-bottom:.3rem">GPS Coordinates</h2>
+        <p id="loc-status" style="font-size:.85rem;color:var(--muted);margin-bottom:1.1rem">Click the button below to fetch your location…</p>
+        <div class="coords-grid">
+          <div class="coord-box"><div class="lbl">Latitude</div><div class="val" id="lat-val">—</div></div>
+          <div class="coord-box"><div class="lbl">Longitude</div><div class="val" id="lng-val">—</div></div>
+        </div>
+        <div style="background:rgba(46,139,139,.08);border-radius:50px;padding:.48rem 1.1rem;display:inline-flex;align-items:center;gap:.48rem;font-size:.82rem;color:var(--sea);margin-top:1rem">
+          🎯 Accuracy: <strong id="acc-val">—</strong>
+        </div>
+        <div style="display:flex;gap:.65rem;flex-wrap:wrap;justify-content:center;margin-top:1.3rem">
+          <button id="get-location-btn" class="btn btn-ry">📍 Get My Location</button>
+          <a id="map-link" href="#" target="_blank" rel="noopener" class="btn btn-sea" style="display:none">🗺️ Open in Maps</a>
+        </div>
+      </div>
+
+      <!-- Map Preview -->
+      <div class="card" style="display:flex;flex-direction:column">
+        <h2 style="font-size:1.1rem;margin-bottom:.75rem">📍 Map Preview</h2>
+        <div class="map-preview" id="map-preview">
+          <div class="map-pin">📍</div>
+          <p style="color:var(--muted);font-size:.86rem">Fetch your location to see<br>a link to Google Maps</p>
+        </div>
+        <div class="info-box mt-3" style="font-size:.8rem;color:var(--olive)">
+          🔒 <strong>Privacy:</strong> Your location is only used on this page and is never sent to any server.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Live Tracking Card -->
+    <div class="card mt-3" style="background:linear-gradient(135deg,rgba(0,34,68,.04),rgba(46,139,139,.05));border:1.5px solid rgba(46,139,139,.22)">
+      <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.85rem">
+        <div class="live-dot"></div>
+        <h2 style="font-size:1.05rem">📡 Live Location Tracking</h2>
+      </div>
+      <p style="font-size:.83rem;color:var(--muted);margin-bottom:.85rem">Track and update your coordinates continuously every few seconds.</p>
+      <div id="live-coords" style="background:rgba(0,34,68,.05);border-radius:var(--radius-sm);padding:.82rem;font-size:.84rem;color:var(--dark);margin-bottom:.85rem;min-height:50px;display:flex;align-items:center">Coordinates will appear here…</div>
+      <p id="live-status" style="font-size:.77rem;color:var(--muted);margin-bottom:.82rem">⚫ Tracking inactive</p>
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+        <button id="live-start-btn" class="btn btn-sea">▶ Start Live Tracking</button>
+        <button id="live-stop-btn" class="btn btn-out-ry" disabled>⏹ Stop</button>
+        <a id="live-map-link" href="#" target="_blank" rel="noopener" class="btn btn-ry" style="display:none">🗺️ Open Maps</a>
+      </div>
+    </div>
+
+    <!-- Quick Call Strip -->
+    <hr class="divider mt-4"/>
+    <h2 style="font-size:1.05rem;margin-bottom:1.1rem">⚡ Quick Emergency Calls</h2>
+    <div class="grid-4">
+      <a href="tel:112" class="nearby-card" style="text-decoration:none;border:2px solid rgba(198,12,48,.25)">
+        <div class="n-icon" style="background:rgba(198,12,48,.1)">🆘</div>
+        <div class="n-info"><h4>National Emergency</h4><p>All-in-one</p></div>
+        <div class="n-dist" style="color:var(--crimson)">112</div>
+      </a>
+      <a href="tel:100" class="nearby-card" style="text-decoration:none">
+        <div class="n-icon" style="background:rgba(0,34,68,.08)">👮</div>
+        <div class="n-info"><h4>Police</h4><p>Law Enforcement</p></div>
+        <div class="n-dist">100</div>
+      </a>
+      <a href="tel:108" class="nearby-card" style="text-decoration:none">
+        <div class="n-icon" style="background:rgba(112,130,56,.1)">🚑</div>
+        <div class="n-info"><h4>Ambulance</h4><p>Medical Emergency</p></div>
+        <div class="n-dist">108</div>
+      </a>
+      <a href="tel:1091" class="nearby-card" style="text-decoration:none">
+        <div class="n-icon" style="background:rgba(198,12,48,.1)">🚺</div>
+        <div class="n-info"><h4>Women Helpline</h4><p>24/7 Support</p></div>
+        <div class="n-dist" style="color:var(--crimson)">1091</div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>🛡️ <strong>Safenix – Rapid Crisis Response System</strong> &nbsp;|&nbsp; Built with ❤️ by Team Devora</p>
+  <p style="margin-top:.4rem;font-size:.72rem;opacity:.7">In any life-threatening emergency, call <strong>112</strong> immediately.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

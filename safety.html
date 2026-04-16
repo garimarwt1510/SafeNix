@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Women Safety Hub – Safenix Rapid Crisis Response System"/>
+  <title>Women Safety Hub | Safenix</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚺</text></svg>"/>
+  <style>
+    .safety-grid { display:grid; grid-template-columns:1fr; gap:1.25rem; }
+    @media(min-width:640px) { .safety-grid { grid-template-columns:1fr 1fr; } }
+    .route-grid { display:grid; grid-template-columns:1fr; gap:1rem; }
+    @media(min-width:600px) { .route-grid { grid-template-columns:1fr 1fr; } }
+    @media(min-width:900px) { .route-grid { grid-template-columns:1fr 1fr 1fr; } }
+    .route-card { background:linear-gradient(135deg,rgba(112,130,56,.08),rgba(112,130,56,.03)); border:1.5px solid rgba(112,130,56,.2); border-radius:var(--radius-sm); padding:1rem; }
+    .live-box { background:rgba(0,34,68,.05); border-radius:var(--radius-sm); padding:.82rem; font-size:.84rem; color:var(--dark); margin-bottom:.9rem; min-height:50px; display:flex; align-items:center; word-break:break-all; }
+    .tpl-wrap { display:flex; flex-direction:column; gap:.5rem; }
+    .card-actions { display:flex; gap:.6rem; flex-wrap:wrap; }
+    @media(max-width:480px) { .card-actions { flex-direction:column; } .card-actions .btn { width:100%; justify-content:center; } }
+    .safety-sos-row { display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center; }
+    @media(max-width:480px) { .safety-sos-row { flex-direction:column; align-items:center; } .safety-sos-row .btn { width:100%; max-width:280px; justify-content:center; } }
+    .feature-header { display:flex; align-items:center; gap:.6rem; margin-bottom:.5rem; }
+    .feature-header span { font-size:1.5rem; }
+    .feature-header h2 { font-size:1.05rem; margin:0; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">🛡️ Safe<span class="logo-accent">nix</span><span class="logo-sub">Rapid Crisis Response</span></a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safety.html" class="nav-women">🚺 Women Safety</a></li>
+      <li><a href="contacts.html">Contacts</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="help.html">Helplines</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="ai-assistant.html" class="nav-ai">🤖 AI Assistant</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="dark-btn" id="dark-btn">🌙 Dark</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="women-hero">
+  <span class="badge badge-cr mb-2" style="background:rgba(255,255,255,.13);color:#FF8FAA">🚺 Women Safety Hub</span>
+  <h1>Your Safety, Our <span style="color:#FF8FAA">Priority</span></h1>
+  <p>Fake call, live location, quick alerts, and audio evidence — everything you need to stay safe.</p>
+  <div class="safety-sos-row">
+    <button id="women-btn" class="btn btn-cr btn-lg">🚺 Women Safety SOS</button>
+    <a href="tel:1091" class="btn btn-glass btn-lg">📞 Women Helpline 1091</a>
+    <a href="tel:100"  class="btn btn-glass">👮 Police 100</a>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <div class="safety-grid">
+
+      <!-- 1. Fake Call -->
+      <div class="card c-cr">
+        <div class="feature-header"><span>📱</span><h2>Fake Call</h2></div>
+        <p style="font-size:.83rem;color:var(--muted);margin-bottom:1rem">Simulate an incoming call to escape uncomfortable situations discreetly.</p>
+        <div class="form-group">
+          <label for="fc-name-input">Caller Name (optional)</label>
+          <input id="fc-name-input" type="text" placeholder="e.g. Mom, Priya, Ravi…"/>
+        </div>
+        <button id="fake-call-btn" class="btn btn-cr" style="width:100%;justify-content:center">📲 Trigger Fake Call</button>
+        <p style="font-size:.74rem;color:var(--muted);margin-top:.6rem">💡 Tap "Decline" to dismiss.</p>
+      </div>
+
+      <!-- 2. Live Location -->
+      <div class="card" style="background:linear-gradient(135deg,rgba(0,34,68,.04),rgba(46,139,139,.05));border:1.5px solid rgba(46,139,139,.22)">
+        <div class="feature-header"><div class="live-dot" style="flex-shrink:0"></div><h2>📡 Live Location Tracking</h2></div>
+        <p style="font-size:.83rem;color:var(--muted);margin-bottom:.9rem">Share your location automatically — updates every few seconds.</p>
+        <div class="live-box" id="live-coords">Coordinates will appear here…</div>
+        <p id="live-status" style="font-size:.77rem;color:var(--muted);margin-bottom:.82rem">⚫ Tracking inactive</p>
+        <div class="card-actions">
+          <button id="live-start-btn" class="btn btn-sea" style="flex:1;justify-content:center">▶ Start Tracking</button>
+          <button id="live-stop-btn" class="btn btn-out-ry" style="flex:1;justify-content:center" disabled>⏹ Stop</button>
+          <a id="live-map-link" href="#" target="_blank" rel="noopener" class="btn btn-ry" style="display:none;flex:1;justify-content:center">🗺️ Maps</a>
+        </div>
+      </div>
+
+      <!-- 3. Quick Alert Templates -->
+      <div class="card c-olive">
+        <div class="feature-header"><span>⚡</span><h2>Quick Alert Messages</h2></div>
+        <p style="font-size:.83rem;color:var(--muted);margin-bottom:1rem">Send predefined emergency messages to all saved contacts instantly.</p>
+        <div class="tpl-wrap">
+          <button class="tpl-btn" data-msg="🆘 I am in danger! Please help me immediately.">🆘 "I am in danger"</button>
+          <button class="tpl-btn" data-msg="📞 Call me urgently! This is an emergency.">📞 "Call me urgently"</button>
+          <button class="tpl-btn" data-msg="📍 Track my location — I need help now.">📍 "Track my location"</button>
+          <button class="tpl-btn" data-msg="🚺 I feel unsafe. Please send help or call me.">🚺 "I feel unsafe"</button>
+        </div>
+        <p style="font-size:.74rem;color:var(--muted);margin-top:.82rem">⚠️ Add contacts first for alerts to be sent.</p>
+      </div>
+
+      <!-- 4. Audio Evidence -->
+      <div class="card c-royal">
+        <div class="feature-header"><span>🎙️</span><h2>Audio Evidence</h2></div>
+        <p style="font-size:.83rem;color:var(--muted);margin-bottom:.65rem">Record audio as emergency evidence. Auto-starts when Women SOS is pressed.</p>
+        <div class="audio-wave" id="audio-wave">
+          <div class="a-bar" style="height:12px"></div>
+          <div class="a-bar" style="height:22px"></div>
+          <div class="a-bar" style="height:30px"></div>
+          <div class="a-bar" style="height:24px"></div>
+          <div class="a-bar" style="height:16px"></div>
+          <div class="a-bar" style="height:10px"></div>
+        </div>
+        <p id="audio-status" style="font-size:.8rem;color:var(--muted);text-align:center;margin-bottom:1rem">⚫ Recorder idle</p>
+        <div class="card-actions">
+          <button id="audio-start-btn" class="btn btn-cr" style="flex:1;justify-content:center">🔴 Start Recording</button>
+          <button id="audio-stop-btn" class="btn btn-out-ry" style="flex:1;justify-content:center" disabled>⏹ Stop</button>
+        </div>
+      </div>
+
+    </div><!-- /safety-grid -->
+
+    <!-- Safe Route Guidance -->
+    <hr class="divider mt-4"/>
+    <h2 style="font-size:1.05rem;margin-bottom:1rem">🗺️ Safe Route Guidance</h2>
+    <div class="route-grid">
+
+      <div class="route-card">
+        <div class="route-tip"><span style="font-size:1.2rem">💡</span><div><h4 style="font-size:.86rem;color:var(--dark);margin-bottom:.08rem">Use Well-Lit Areas</h4><p style="font-size:.78rem;color:var(--muted)">Prefer streets with good lighting. Avoid dark alleys at night.</p></div></div>
+        <div class="route-tip"><span style="font-size:1.2rem">👥</span><div><h4 style="font-size:.86rem;color:var(--dark);margin-bottom:.08rem">Stay in Crowds</h4><p style="font-size:.78rem;color:var(--muted)">If followed, enter a busy shop or restaurant immediately.</p></div></div>
+        <div class="route-tip"><span style="font-size:1.2rem">🚌</span><div><h4 style="font-size:.86rem;color:var(--dark);margin-bottom:.08rem">Verified Transport</h4><p style="font-size:.78rem;color:var(--muted)">Use verified rides. Share trip details with a trusted contact.</p></div></div>
+      </div>
+
+      <div class="route-card">
+        <div class="route-tip"><span style="font-size:1.2rem">📞</span><div><h4 style="font-size:.86rem;color:var(--dark);margin-bottom:.08rem">Stay Connected</h4><p style="font-size:.78rem;color:var(--muted)">Keep a trusted person on the phone when walking alone.</p></div></div>
+        <div class="route-tip"><span style="font-size:1.2rem">🚓</span><div><h4 style="font-size:.86rem;color:var(--dark);margin-bottom:.08rem">Near Police Posts</h4><p style="font-size:.78rem;color:var(--muted)">Plan routes near police stations — immediate safe zones.</p></div></div>
+        <div class="route-tip"><span style="font-size:1.2rem">🔔</span><div><h4 style="font-size:.86rem;color:var(--dark);margin-bottom:.08rem">Make Noise</h4><p style="font-size:.78rem;color:var(--muted)">Shout, whistle, or honk. Attention deters threats.</p></div></div>
+      </div>
+
+      <div class="route-card">
+        <div class="route-tip"><span style="font-size:1.2rem">🧠</span><div><h4 style="font-size:.86rem;color:var(--dark);margin-bottom:.08rem">Trust Your Instincts</h4><p style="font-size:.78rem;color:var(--muted)">If something feels wrong, act on it immediately.</p></div></div>
+        <div class="route-tip"><span style="font-size:1.2rem">📱</span><div><h4 style="font-size:.86rem;color:var(--dark);margin-bottom:.08rem">Keep Phone Charged</h4><p style="font-size:.78rem;color:var(--muted)">Carry a power bank. A dead phone is your biggest vulnerability.</p></div></div>
+        <div class="route-tip"><span style="font-size:1.2rem">🏃</span><div><h4 style="font-size:.86rem;color:var(--dark);margin-bottom:.08rem">Know Your Exits</h4><p style="font-size:.78rem;color:var(--muted)">In any new place, always note the nearest exits.</p></div></div>
+      </div>
+
+    </div>
+
+    <!-- Helplines strip -->
+    <hr class="divider mt-4"/>
+    <h2 style="font-size:1.05rem;margin-bottom:1rem">📞 Emergency Helplines</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.75rem">
+      <a href="tel:112"  class="nearby-card" style="text-decoration:none;border:1.5px solid rgba(198,12,48,.25)">
+        <div class="n-icon" style="background:rgba(198,12,48,.1)">🆘</div>
+        <div class="n-info"><h4>National Emergency</h4><p>All-in-one</p></div>
+        <div class="n-dist" style="color:var(--crimson)">112</div>
+      </a>
+      <a href="tel:1091" class="nearby-card" style="text-decoration:none">
+        <div class="n-icon" style="background:rgba(198,12,48,.1)">🚺</div>
+        <div class="n-info"><h4>Women Helpline</h4><p>24/7</p></div>
+        <div class="n-dist" style="color:var(--crimson)">1091</div>
+      </a>
+      <a href="tel:100"  class="nearby-card" style="text-decoration:none">
+        <div class="n-icon" style="background:rgba(0,34,68,.08)">👮</div>
+        <div class="n-info"><h4>Police</h4><p>Law Enforcement</p></div>
+        <div class="n-dist">100</div>
+      </a>
+      <a href="tel:108"  class="nearby-card" style="text-decoration:none">
+        <div class="n-icon" style="background:rgba(112,130,56,.1)">🚑</div>
+        <div class="n-info"><h4>Ambulance</h4><p>Medical</p></div>
+        <div class="n-dist">108</div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- WOMEN SOS OVERLAY -->
+<div id="women-overlay" class="overlay" role="dialog" aria-modal="true">
+  <div class="popup">
+    <div class="rec-badge on"><div class="rec-dot"></div> Recording Evidence</div>
+    <div class="pop-icon cr">🚺</div>
+    <h2 style="color:var(--crimson)">Women Safety SOS!</h2>
+    <p>I feel unsafe — alert sent with your location to all emergency contacts.</p>
+    <div class="loc-box" id="women-location">📡 Fetching your location…</div>
+    <div class="success-screen" id="women-success">
+      <div class="success-ring">✅</div>
+      <p style="font-weight:700;color:var(--olive);font-size:.98rem">Women Safety Alert Sent!</p>
+      <p style="font-size:.8rem;color:var(--muted);margin-top:.2rem">Your contacts and location have been shared.</p>
+    </div>
+    <div class="ai-panel" id="women-ai-panel">
+      <div class="ai-label">🤖 AI Safety Guidance</div>
+      <div class="ai-body" id="women-ai-text"></div>
+    </div>
+    <div class="pop-actions">
+      <a id="women-map-link" href="#" target="_blank" rel="noopener" class="btn btn-ry" style="display:none">🗺️ Maps</a>
+      <a href="tel:1091" class="btn btn-cr">📞 Women Helpline 1091</a>
+      <a href="tel:100"  class="btn btn-ry btn-sm">👮 Police 100</a>
+      <button id="women-close" class="btn btn-out-cr btn-sm">✕ Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- FAKE CALL SCREEN -->
+<div id="fake-call-screen" class="fake-call" role="dialog">
+  <div>
+    <p class="fc-status">Incoming Call</p>
+    <div class="fc-icon">👩</div>
+    <p class="fc-name" id="fc-name">Mom Calling</p>
+    <p class="fc-number" id="fc-number">+91 98765 00001</p>
+    <p style="font-size:.78rem;color:rgba(255,255,255,.32);margin-top:.5rem">📳 Vibrating…</p>
+  </div>
+  <div class="fc-btns">
+    <button class="fc-btn fc-decline" id="fc-decline"><div class="fc-circle">📵</div><span>Decline</span></button>
+    <button class="fc-btn fc-accept"  id="fc-accept"> <div class="fc-circle">📞</div><span>Accept</span> </button>
+  </div>
+</div>
+
+<footer>
+  <p>🛡️ <strong>Safenix – Rapid Crisis Response System</strong> &nbsp;|&nbsp; Built with ❤️ by Team Devora</p>
+  <p style="margin-top:.4rem;font-size:.72rem;opacity:.7">In any emergency, call <strong>112</strong> or <strong>1091</strong> (Women Helpline).</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

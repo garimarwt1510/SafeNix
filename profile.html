@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>My Profile | Safenix</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👤</text></svg>"/>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">🛡️ Safe<span class="logo-accent">nix</span><span class="logo-sub">Rapid Crisis Response</span></a>
+    <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safety.html" class="nav-women">🚺 Women Safety</a></li>
+      <li><a href="contacts.html">Contacts</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="help.html">Helplines</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="ai-assistant.html" class="nav-ai">🤖 AI Assistant</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="dark-btn" id="dark-btn">🌙 Dark</button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="badge badge-ry mb-2">👤 User Profile</span>
+  <h1>My <span class="ac-ry">Emergency Profile</span></h1>
+  <p>Your medical info and emergency details — stored locally, helps responders help you faster.</p>
+</div>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="grid-2">
+
+      <!-- Profile Display -->
+      <div class="card tc" style="padding:2.5rem 2rem">
+        <div class="p-avatar" id="p-avatar-text">👤</div>
+        <h2 id="p-name-display" style="font-size:1.45rem;font-weight:900;margin-bottom:.32rem">Your Name</h2>
+        <div class="blood-tag mb-3" id="p-blood-display">— Blood Group</div>
+
+        <div style="display:flex;flex-direction:column;gap:.6rem;text-align:left;margin-top:.5rem">
+          <div class="nearby-card" style="cursor:default">
+            <div class="n-icon" style="background:rgba(198,12,48,.1)">🩸</div>
+            <div class="n-info"><h4>Blood Group</h4><p id="p-medical-display" style="display:none"></p><p id="disp-blood">Not set</p></div>
+          </div>
+          <div class="nearby-card" style="cursor:default">
+            <div class="n-icon" style="background:rgba(0,34,68,.08)">💊</div>
+            <div class="n-info"><h4>Medical / Allergies</h4><p id="disp-medical">Not set</p></div>
+          </div>
+          <div class="nearby-card" style="cursor:default">
+            <div class="n-icon" style="background:rgba(46,139,139,.1)">📞</div>
+            <div class="n-info"><h4>Emergency Contact</h4><p id="p-emer-display">Not set</p></div>
+          </div>
+        </div>
+
+        <div class="info-box mt-3" style="font-size:.78rem;color:var(--crimson);background:rgba(198,12,48,.06);border-color:rgba(198,12,48,.16)">
+          🔒 All data stored locally on your device only. Never uploaded to any server.
+        </div>
+      </div>
+
+      <!-- Profile Form -->
+      <div class="card c-royal">
+        <h2 style="font-size:1.1rem;margin-bottom:1.2rem">Edit Profile</h2>
+        <form id="profile-form" novalidate>
+          <div class="form-group">
+            <label for="p-name">Full Name</label>
+            <input type="text" id="p-name" placeholder="Your full name" maxlength="60"/>
+          </div>
+          <div class="form-group">
+            <label for="p-age">Age</label>
+            <input type="number" id="p-age" placeholder="Your age" min="1" max="120"/>
+          </div>
+          <div class="form-group">
+            <label for="p-blood">Blood Group</label>
+            <select id="p-blood">
+              <option value="">Select blood group</option>
+              <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+              <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="p-medical">Medical Conditions / Allergies</label>
+            <input type="text" id="p-medical" placeholder="e.g. Diabetic, Allergic to penicillin"/>
+          </div>
+          <div class="form-group">
+            <label for="p-emer-name">Emergency Contact Name</label>
+            <input type="text" id="p-emer-name" placeholder="Emergency contact's name"/>
+          </div>
+          <div class="form-group">
+            <label for="p-emer-phone">Emergency Contact Phone</label>
+            <input type="tel" id="p-emer-phone" placeholder="+91 98765 43210"/>
+          </div>
+          <button type="submit" class="btn btn-ry" style="width:100%;justify-content:center;margin-top:.25rem">💾 Save Profile</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Nearby Help -->
+    <hr class="divider mt-4"/>
+    <h2 style="font-size:1.05rem;margin-bottom:1.1rem">🏥 Nearby Emergency Services</h2>
+    <div class="grid-4">
+      <a href="tel:112" class="nearby-card" style="text-decoration:none;border:2px solid rgba(198,12,48,.22)">
+        <div class="n-icon" style="background:rgba(198,12,48,.1)">🆘</div>
+        <div class="n-info"><h4>National Emergency</h4><p>All-in-one</p></div>
+        <div class="n-dist" style="color:var(--crimson)">112</div>
+      </a>
+      <a href="tel:100" class="nearby-card" style="text-decoration:none">
+        <div class="n-icon" style="background:rgba(0,34,68,.08)">👮</div>
+        <div class="n-info"><h4>Police Station</h4><p>Law Enforcement</p></div>
+        <div class="n-dist">100</div>
+      </a>
+      <a href="tel:108" class="nearby-card" style="text-decoration:none">
+        <div class="n-icon" style="background:rgba(112,130,56,.1)">🏥</div>
+        <div class="n-info"><h4>Hospital / Ambulance</h4><p>Medical Help</p></div>
+        <div class="n-dist">108</div>
+      </a>
+      <a href="tel:101" class="nearby-card" style="text-decoration:none">
+        <div class="n-icon" style="background:rgba(226,114,91,.1)">🔥</div>
+        <div class="n-info"><h4>Fire Brigade</h4><p>Fire & Rescue</p></div>
+        <div class="n-dist">101</div>
+      </a>
+      <a href="tel:1091" class="nearby-card" style="text-decoration:none">
+        <div class="n-icon" style="background:rgba(198,12,48,.1)">🚺</div>
+        <div class="n-info"><h4>Women Helpline</h4><p>24/7 Support</p></div>
+        <div class="n-dist" style="color:var(--crimson)">1091</div>
+      </a>
+      <a href="tel:1098" class="nearby-card" style="text-decoration:none">
+        <div class="n-icon" style="background:rgba(204,119,34,.1)">🧒</div>
+        <div class="n-info"><h4>Childline</h4><p>Child Safety</p></div>
+        <div class="n-dist">1098</div>
+      </a>
+      <a href="tel:14567" class="nearby-card" style="text-decoration:none">
+        <div class="n-icon" style="background:rgba(46,139,139,.1)">👴</div>
+        <div class="n-info"><h4>Senior Citizens</h4><p>Elder Support</p></div>
+        <div class="n-dist">14567</div>
+      </a>
+      <a href="tel:1078" class="nearby-card" style="text-decoration:none">
+        <div class="n-icon" style="background:rgba(0,34,68,.06)">🌊</div>
+        <div class="n-info"><h4>Disaster Help</h4><p>NDMA Helpline</p></div>
+        <div class="n-dist">1078</div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>🛡️ <strong>Safenix – Rapid Crisis Response System</strong> &nbsp;|&nbsp; Built with ❤️ by Team Devora</p>
+  <p style="margin-top:.4rem;font-size:.72rem;opacity:.7">In any life-threatening emergency, call <strong>112</strong> immediately.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+  // Update the blood display separately (it shares ID with the main display)
+  function syncDisplays() {
+    const p = getProfile();
+    const $db = document.getElementById('disp-blood');
+    const $dm = document.getElementById('disp-medical');
+    const $de = document.getElementById('p-emer-display');
+    if ($db) $db.textContent = p.blood || 'Not set';
+    if ($dm) $dm.textContent = p.medical || 'Not set';
+    if ($de) $de.textContent = p.emer_name ? `${p.emer_name} — ${p.emer_phone || ''}` : 'Not set';
+    const $bd = document.getElementById('p-blood-display');
+    if ($bd) $bd.textContent = p.blood ? '🩸 ' + p.blood : '— Blood Group';
+  }
+  syncDisplays();
+  const pf = document.getElementById('profile-form');
+  if (pf) pf.addEventListener('submit', () => setTimeout(syncDisplays, 100));
+</script>
+</body>
+</html>

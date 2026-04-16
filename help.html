@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Emergency Helplines | Safenix</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📞</text></svg>"/>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">🛡️ Safe<span class="logo-accent">nix</span><span class="logo-sub">Rapid Crisis Response</span></a>
+    <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safety.html" class="nav-women">🚺 Women Safety</a></li>
+      <li><a href="contacts.html">Contacts</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="help.html">Helplines</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="ai-assistant.html" class="nav-ai">🤖 AI Assistant</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="dark-btn" id="dark-btn">🌙 Dark</button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="badge badge-cr mb-2">🆘 Emergency Helplines</span>
+  <h1>India's <span class="ac-cr">Emergency Numbers</span></h1>
+  <p>One-tap calling to national emergency services. All numbers are free to dial 24/7.</p>
+</div>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+
+    <!-- Priority 112 card -->
+    <a href="tel:112" style="display:block;text-decoration:none;margin-bottom:2rem">
+      <div style="background:linear-gradient(135deg,var(--crimson),var(--crimson-drk));border-radius:var(--radius);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;box-shadow:var(--sh-cr);transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 14px 48px rgba(198,12,48,.45)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div>
+          <span style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65)">National Emergency — Tap to Call</span>
+          <div style="font-family:'Syne',sans-serif;font-size:clamp(2rem,6vw,3.5rem);font-weight:900;color:#fff;margin-top:.2rem;letter-spacing:2px">112</div>
+          <p style="color:rgba(255,255,255,.75);font-size:.88rem;margin-top:.2rem">Police · Ambulance · Fire — All in one</p>
+        </div>
+        <div style="font-size:4rem;opacity:.9">🆘</div>
+      </div>
+    </a>
+
+    <!-- All helplines -->
+    <h2 style="font-size:1.05rem;margin-bottom:1.1rem">📞 All Emergency Numbers</h2>
+    <div style="display:flex;flex-direction:column;gap:.9rem;margin-bottom:3rem">
+
+      <a href="tel:100" class="hl-card police" style="text-decoration:none">
+        <div class="hl-icon" style="background:rgba(0,34,68,.08)">👮</div>
+        <div class="hl-info">
+          <h3>Police</h3>
+          <p>Crime, theft, violence, security threats</p>
+          <div class="hl-num">100</div>
+        </div>
+        <span class="badge badge-ry" style="margin-left:auto;white-space:nowrap">Tap to Call ↗</span>
+      </a>
+
+      <a href="tel:108" class="hl-card medical" style="text-decoration:none">
+        <div class="hl-icon" style="background:rgba(112,130,56,.1)">🚑</div>
+        <div class="hl-info">
+          <h3>Ambulance / Medical Emergency</h3>
+          <p>Accidents, cardiac events, medical crises</p>
+          <div class="hl-num">108</div>
+        </div>
+        <span class="badge badge-ol" style="margin-left:auto;white-space:nowrap">Tap to Call ↗</span>
+      </a>
+
+      <a href="tel:1091" class="hl-card women" style="text-decoration:none">
+        <div class="hl-icon" style="background:rgba(198,12,48,.1)">🚺</div>
+        <div class="hl-info">
+          <h3>Women Helpline</h3>
+          <p>Domestic violence, harassment, women in distress</p>
+          <div class="hl-num">1091</div>
+        </div>
+        <span class="badge badge-cr" style="margin-left:auto;white-space:nowrap">Tap to Call ↗</span>
+      </a>
+
+      <a href="tel:101" class="hl-card fire" style="text-decoration:none">
+        <div class="hl-icon" style="background:rgba(226,114,91,.1)">🔥</div>
+        <div class="hl-info">
+          <h3>Fire Brigade</h3>
+          <p>Fire, gas leaks, explosions, building emergencies</p>
+          <div class="hl-num">101</div>
+        </div>
+        <span class="badge badge-oc" style="margin-left:auto;white-space:nowrap">Tap to Call ↗</span>
+      </a>
+
+      <a href="tel:1098" class="hl-card" style="text-decoration:none;border-left:4px solid var(--ochre)">
+        <div class="hl-icon" style="background:rgba(204,119,34,.1)">🧒</div>
+        <div class="hl-info">
+          <h3>Childline</h3>
+          <p>Children in distress, abuse, exploitation</p>
+          <div class="hl-num">1098</div>
+        </div>
+        <span class="badge badge-oc" style="margin-left:auto;white-space:nowrap">Tap to Call ↗</span>
+      </a>
+
+      <a href="tel:1078" class="hl-card" style="text-decoration:none;border-left:4px solid var(--sea)">
+        <div class="hl-icon" style="background:rgba(46,139,139,.1)">🌊</div>
+        <div class="hl-info">
+          <h3>Disaster Management (NDMA)</h3>
+          <p>Floods, earthquakes, cyclones, natural disasters</p>
+          <div class="hl-num">1078</div>
+        </div>
+        <span class="badge badge-sea" style="margin-left:auto;white-space:nowrap">Tap to Call ↗</span>
+      </a>
+
+      <a href="tel:14567" class="hl-card" style="text-decoration:none;border-left:4px solid var(--olive)">
+        <div class="hl-icon" style="background:rgba(112,130,56,.1)">👴</div>
+        <div class="hl-info">
+          <h3>Senior Citizen Helpline</h3>
+          <p>Support for senior citizens facing distress or abuse</p>
+          <div class="hl-num">14567</div>
+        </div>
+        <span class="badge badge-ol" style="margin-left:auto;white-space:nowrap">Tap to Call ↗</span>
+      </a>
+
+    </div>
+
+    <!-- Safety Tips -->
+    <hr class="divider"/>
+    <h2 style="font-size:1.05rem;margin-bottom:1.1rem">🛡️ Emergency Safety Tips</h2>
+    <div style="display:flex;flex-direction:column;gap:.8rem">
+      <div class="tip-card"><div class="tip-num">1</div><div><h4>Stay Calm & Assess</h4><p>Quickly identify the type of emergency before calling. Accurate info helps responders reach you faster.</p></div></div>
+      <div class="tip-card"><div class="tip-num">2</div><div><h4>Share Your Exact Location</h4><p>State your exact address or landmark. Use Safenix's Location page to get GPS coordinates to share.</p></div></div>
+      <div class="tip-card"><div class="tip-num">3</div><div><h4>Stay on the Line</h4><p>Don't hang up. Dispatchers may give critical first-aid instructions or relay your location to field teams.</p></div></div>
+      <div class="tip-card"><div class="tip-num">4</div><div><h4>Alert People Around You</h4><p>Shout or signal to bystanders for help. In India, most people will assist someone in genuine distress.</p></div></div>
+      <div class="tip-card"><div class="tip-num">5</div><div><h4>Know Basic First Aid</h4><p>Learn CPR and how to stop bleeding. These skills can save a life in the minutes before help arrives.</p></div></div>
+      <div class="tip-card"><div class="tip-num">6</div><div><h4>Prepare an Emergency Kit</h4><p>Keep a first-aid box, torch, emergency cash, important documents, and a list of emergency contacts ready.</p></div></div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>🛡️ <strong>Safenix – Rapid Crisis Response System</strong> &nbsp;|&nbsp; Built with ❤️ by Team Devora</p>
+  <p style="margin-top:.4rem;font-size:.72rem;opacity:.7">In any life-threatening emergency, call <strong>112</strong> immediately.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

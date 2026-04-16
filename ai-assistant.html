@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>AI Assistant | Safenix</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>"/>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">🛡️ Safe<span class="logo-accent">nix</span><span class="logo-sub">Rapid Crisis Response</span></a>
+    <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safety.html" class="nav-women">🚺 Women Safety</a></li>
+      <li><a href="contacts.html">Contacts</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="help.html">Helplines</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="ai-assistant.html" class="nav-ai">🤖 AI Assistant</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="dark-btn" id="dark-btn">🌙 Dark</button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="badge badge-sea mb-2">🤖 Powered by Claude AI</span>
+  <h1>Emergency <span class="ac-sea">AI Assistant</span></h1>
+  <p>Instant first-aid guidance, situation assessment, and emergency advice — available 24/7.</p>
+</div>
+
+<div class="ai-layout">
+
+  <!-- Sidebar -->
+  <aside class="ai-sidebar">
+    <div class="s-title">⚡ Quick Emergency Scenarios</div>
+
+    <button class="q-btn" onclick="sendQuick('Someone near me is having a heart attack. What should I do immediately?')">
+      <span class="qi">❤️</span><div><span class="ql">Heart Attack</span><span class="qs">Immediate steps to take</span></div>
+    </button>
+    <button class="q-btn" onclick="sendQuick('There is a fire in my building. How do I safely evacuate?')">
+      <span class="qi">🔥</span><div><span class="ql">Building Fire</span><span class="qs">Safe evacuation steps</span></div>
+    </button>
+    <button class="q-btn" onclick="sendQuick('A person is unconscious and not breathing. What first aid should I perform?')">
+      <span class="qi">🫁</span><div><span class="ql">Unconscious Person</span><span class="qs">CPR & first aid guide</span></div>
+    </button>
+    <button class="q-btn" onclick="sendQuick('Someone is having a severe allergic reaction. How do I help?')">
+      <span class="qi">🤧</span><div><span class="ql">Severe Allergy</span><span class="qs">Anaphylaxis response</span></div>
+    </button>
+    <button class="q-btn" onclick="sendQuick('Someone is bleeding heavily. How do I stop the bleeding?')">
+      <span class="qi">🩸</span><div><span class="ql">Severe Bleeding</span><span class="qs">Wound management</span></div>
+    </button>
+    <button class="q-btn" onclick="sendQuick('A child is choking. What do I do right now?')">
+      <span class="qi">🧒</span><div><span class="ql">Child Choking</span><span class="qs">Heimlich maneuver guide</span></div>
+    </button>
+    <button class="q-btn" onclick="sendQuick('An earthquake is happening right now. What is the safest thing to do?')">
+      <span class="qi">🌍</span><div><span class="ql">Earthquake</span><span class="qs">Drop, cover, hold on</span></div>
+    </button>
+    <button class="q-btn" onclick="sendQuick('I am a woman and I feel I am being followed and I am in danger. What should I do?')">
+      <span class="qi">🚺</span><div><span class="ql">Personal Safety Threat</span><span class="qs">Women's safety steps</span></div>
+    </button>
+    <button class="q-btn" onclick="sendQuick('There has been a road accident with injuries. What should I do to help?')">
+      <span class="qi">🚗</span><div><span class="ql">Road Accident</span><span class="qs">First responder steps</span></div>
+    </button>
+
+    <div class="s-title" style="margin-top:1.4rem">📞 Call Now</div>
+    <div class="call-strip">
+      <a href="tel:112" class="c-strip-item"><div class="csl"><span>🆘</span><span class="cname">National Emergency</span></div><span class="cnum">112</span></a>
+      <a href="tel:100" class="c-strip-item"><div class="csl"><span>👮</span><span class="cname">Police</span></div><span class="cnum">100</span></a>
+      <a href="tel:108" class="c-strip-item"><div class="csl"><span>🚑</span><span class="cname">Ambulance</span></div><span class="cnum">108</span></a>
+      <a href="tel:1091" class="c-strip-item"><div class="csl"><span>🚺</span><span class="cname">Women Helpline</span></div><span class="cnum">1091</span></a>
+      <a href="tel:101" class="c-strip-item"><div class="csl"><span>🔥</span><span class="cname">Fire Brigade</span></div><span class="cnum">101</span></a>
+    </div>
+  </aside>
+
+  <!-- Chat Window -->
+  <div>
+    <div class="chat-win">
+      <div class="chat-hdr">
+        <div class="chat-avatar">🤖</div>
+        <div class="chat-hdr-info">
+          <h3>Safenix AI — Emergency Assistant</h3>
+          <p><span class="st-dot"></span>Online — Powered by Claude AI</p>
+        </div>
+        <button onclick="clearChat()" title="Clear chat" style="margin-left:auto;background:none;border:none;cursor:pointer;font-size:1.1rem;color:var(--muted);padding:4px 8px;border-radius:6px;transition:background .2s" onmouseover="this.style.background='rgba(0,34,68,.08)'" onmouseout="this.style.background='none'">🗑️</button>
+      </div>
+      <div class="chat-body" id="chat-body"></div>
+      <div class="chat-ftr">
+        <div class="chat-row">
+          <textarea id="chat-input" placeholder="Describe the emergency situation…" rows="1" maxlength="800" aria-label="Type your emergency question"></textarea>
+          <button id="send-btn" onclick="sendChat()" aria-label="Send">➤</button>
+        </div>
+        <div class="char-hint"><span id="char-count">0</span>/800</div>
+      </div>
+    </div>
+    <div class="ai-disclaimer">
+      <span>⚠️</span>
+      <span><strong>Medical Disclaimer:</strong> This AI provides general first-aid guidance only — not a substitute for professional medical advice. In any life-threatening emergency, call <strong>112</strong> immediately and follow instructions from trained emergency responders.</span>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>🛡️ <strong>Safenix – Rapid Crisis Response System</strong> &nbsp;|&nbsp; Built with ❤️ by Team Devora</p>
+  <p style="margin-top:.4rem;font-size:.72rem;opacity:.7">In any life-threatening emergency, call <strong>112</strong> immediately.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

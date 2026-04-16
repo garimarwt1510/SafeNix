@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Contacts | Safenix</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👥</text></svg>"/>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">🛡️ Safe<span class="logo-accent">nix</span><span class="logo-sub">Rapid Crisis Response</span></a>
+    <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="safety.html" class="nav-women">🚺 Women Safety</a></li>
+      <li><a href="contacts.html">Contacts</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="help.html">Helplines</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="ai-assistant.html" class="nav-ai">🤖 AI Assistant</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="dark-btn" id="dark-btn">🌙 Dark</button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="badge badge-ry mb-2">👥 Emergency Contacts</span>
+  <h1>Your <span class="ac-cr">Safety Network</span></h1>
+  <p>Add trusted people who'll be notified instantly when you press SOS. Stored locally on your device.</p>
+</div>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="contacts-layout">
+
+      <!-- Add Form -->
+      <div class="card c-royal">
+        <h2 style="font-size:1.1rem;margin-bottom:.22rem">Add New Contact</h2>
+        <p style="font-size:.82rem;color:var(--muted);margin-bottom:1.25rem">All contact data is stored only on your device.</p>
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="c-name">Full Name <span style="color:var(--crimson)">*</span></label>
+            <input type="text" id="c-name" placeholder="e.g. Priya Sharma" maxlength="60" required/>
+          </div>
+          <div class="form-group">
+            <label for="c-phone">Phone Number <span style="color:var(--crimson)">*</span></label>
+            <input type="tel" id="c-phone" placeholder="e.g. +91 98765 43210" maxlength="20" required/>
+          </div>
+          <button type="submit" class="btn btn-ry" style="width:100%;justify-content:center;margin-top:.25rem">➕ Add Contact</button>
+        </form>
+        <div class="info-box mt-3" style="font-size:.78rem;color:var(--sea)">
+          ℹ️ Contacts are saved in browser localStorage — never uploaded to any server.
+        </div>
+      </div>
+
+      <!-- Contacts List -->
+      <div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem">
+          <h2 style="font-size:1.1rem">Saved Contacts</h2>
+          <span id="contact-count" class="badge badge-ol">0 saved</span>
+        </div>
+        <div id="contact-list" style="display:flex;flex-direction:column;gap:.7rem"></div>
+        <div id="clear-all-wrap" class="hidden mt-3 tc">
+          <button id="clear-all-btn" class="btn btn-out-cr btn-sm">🗑️ Clear All Contacts</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Tips -->
+    <hr class="divider mt-4"/>
+    <h2 style="font-size:1.05rem;margin-bottom:1.1rem">💡 Contact Tips</h2>
+    <div class="grid-3">
+      <div class="tip-card"><div class="tip-num">1</div><div><h4>Add Family First</h4><p>Immediate family should always be your primary emergency contacts — they know you best.</p></div></div>
+      <div class="tip-card"><div class="tip-num">2</div><div><h4>Include a Nearby Person</h4><p>Add a neighbour or local friend who can physically reach you quickly in an emergency.</p></div></div>
+      <div class="tip-card"><div class="tip-num">3</div><div><h4>Keep Numbers Updated</h4><p>Review your contact list regularly to ensure all numbers are current and reachable.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>🛡️ <strong>Safenix – Rapid Crisis Response System</strong> &nbsp;|&nbsp; Built with ❤️ by Team Devora</p>
+  <p style="margin-top:.4rem;font-size:.72rem;opacity:.7">In any life-threatening emergency, call <strong>112</strong> immediately.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
